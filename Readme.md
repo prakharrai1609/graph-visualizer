@@ -26,7 +26,7 @@ Graph algorithms solve problems that range from finding the shortest route betwe
 
 ## 🚗 Getting Started
 
-1. Clone the repository: `[git clone https://github.com/yourusername/GraphViz.git](https://github.com/prakharrai1609/graph-visualizer)`
+1. Clone the repository: `https://github.com/prakharrai1609/graph-visualizer`
 2. Navigate to the project directory: `cd graph-visualizer`
 3. Open `index.html` in your browser.
 
