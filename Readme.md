@@ -1,5 +1,7 @@
 🚀 **Welcome to GraphViz: Explore the World of Graph Algorithms!** 🌌
 
+<a href="https://prakharrai1609.github.io/graph-visualizer/">Live here</a>
+
 <img width="1371" alt="Screenshot 2023-08-13 at 7 21 39 PM" src="https://github.com/prakharrai1609/graph-visualizer/assets/58136319/73d52f8d-928f-429e-a51b-17db3a6eab70">
 
 ## What is GraphViz? 📊
