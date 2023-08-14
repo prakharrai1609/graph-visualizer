@@ -3,6 +3,7 @@ const algorithmSelect = document.getElementById('algorithm-select');
 const runButton = document.getElementById('run-button');
 const gridSizeInput = document.getElementById('grid-size');
 const speedInput = document.getElementById('speed');
+const alert = document.getElementById('alert');
 
 let grid = [];
 let startNode = null;
@@ -60,6 +61,8 @@ function handleNodeClick(event) {
         endNode = { row, col };
         node.classList.add('end');
     } else {
+        if (node.classList.contains('start')) startNode = null;
+        if (node.classList.contains('end')) endNode = null;
         const nodeId = `${row}-${col}`;
         if (blockedNodes.has(nodeId)) {
             blockedNodes.delete(nodeId);
@@ -245,7 +248,28 @@ async function printShortestPath(grid, startNode, endNode) {
   }
 }
 
+function throwError(HTMLElement, kind, text) {
+  if (kind === "danger") {
+    HTMLElement.innerHTML = `
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      ${text}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    `;
+  }
+}
+
 function runAlgorithm() {
+  if (!startNode) {
+    throwError(alert, "danger", "<strong>No start node found!</strong> Where will you start huh?");
+    return;
+  }
+
+  if (!endNode) {
+    throwError(alert, "danger", "<strong>No end node found!</strong> Where will you start huh?");
+    return;
+  }
+
   if (isRunning) return;
   isRunning = true;
 
